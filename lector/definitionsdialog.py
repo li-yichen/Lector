@@ -77,7 +77,10 @@ class DefinitionsUI(QtWidgets.QDialog, definitions.Ui_Dialog):
 
     def api_call(self, url, word):
         language = self.parent.settings['dictionary_language']
-        url = url + language + '/' + word.lower()
+        if language != "de":
+            url = url + language + '/' + word.lower()
+            else:
+                url = url + language + '/en/' + word.lower()
 
         req = urllib.request.Request(url)
         req.add_header('app_id', self.app_id)
