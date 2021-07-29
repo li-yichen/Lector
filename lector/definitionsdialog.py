@@ -63,7 +63,9 @@ class DefinitionsUI(QtWidgets.QDialog, definitions.Ui_Dialog):
 
         self.root_url = 'https://od-api.oxforddictionaries.com:443/api/v2/inflections/'
         self.define_url = 'https://od-api.oxforddictionaries.com:443/api/v2/entries/'
-        #ADDED: translation since some languages do not have 'entries'
+        
+        #07/29/2021: ADDED: translation and lemmas since some languages do not have 'entries' or 'inflections'
+        self.lemmas_url = 'https://od-api.oxforddictionaries.com/api/v2/lemmas/
         self.translation_url = 'https://od-api.oxforddictionaries.com:443/api/v2/translations'
 
         self.pronunciation_mp3 = None
@@ -77,6 +79,9 @@ class DefinitionsUI(QtWidgets.QDialog, definitions.Ui_Dialog):
 
     def api_call(self, url, word):
         language = self.parent.settings['dictionary_language']
+        
+        
+        #07/29/2021: unresolved problem
         if language != "de":
             url = url + language + '/' + word.lower()
             else:
@@ -112,6 +117,7 @@ class DefinitionsUI(QtWidgets.QDialog, definitions.Ui_Dialog):
             logger.error('Definition json noped out: ' + word_root)
             self.set_text(word, None, None, True)
             return
+        translation_json = self.api_call(self.translation_url, 
 
         definitions = {}
         for i in definition_json['results'][0]['lexicalEntries']:
