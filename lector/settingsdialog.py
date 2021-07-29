@@ -403,7 +403,9 @@ class SettingsUI(QtWidgets.QDialog, settingswindow.Ui_Dialog):
         language_dict = {
             0: 'en',
             1: 'es',
-            2: 'hi'}
+            2: 'hi',
+            3: 'de',
+            4: 'fr'}
         self.main_window.settings[
             'dictionary_language'] = language_dict[self.languageBox.currentIndex()]
 
