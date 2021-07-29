@@ -69,7 +69,9 @@ class SettingsUI(QtWidgets.QDialog, settingswindow.Ui_Dialog):
         english_string = self._translate('SettingsUI', 'English')
         spanish_string = self._translate('SettingsUI', 'Spanish')
         hindi_string = self._translate('SettingsUI', 'Hindi')
-        languages = [english_string, spanish_string, hindi_string]
+        german_string = self._translate('SettingsUI', 'German')
+        french_string = self._translate('SettingsUI', 'French')
+        languages = [english_string, spanish_string, hindi_string, german_string, french_string]
 
         self.languageBox.addItems(languages)
         current_language = self.main_window.settings['dictionary_language']
