@@ -63,6 +63,8 @@ class DefinitionsUI(QtWidgets.QDialog, definitions.Ui_Dialog):
 
         self.root_url = 'https://od-api.oxforddictionaries.com:443/api/v2/inflections/'
         self.define_url = 'https://od-api.oxforddictionaries.com:443/api/v2/entries/'
+        #ADDED: translation since some languages do not have 'entries'
+        self.translation_url = 'https://od-api.oxforddictionaries.com:443/api/v2/translations'
 
         self.pronunciation_mp3 = None
 
