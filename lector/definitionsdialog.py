@@ -58,11 +58,11 @@ class DefinitionsUI(QtWidgets.QDialog, definitions.Ui_Dialog):
 
         self.definitionView.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
 
-        self.app_id = 'bb7a91f9'
-        self.app_key = 'fefacdf6775c347b52e9efa2efe642ef'
+        self.app_id = 'e999bc2d'
+        self.app_key = '4626d19b00e75bef78cd2e8f9b1d982a'
 
-        self.root_url = 'https://od-api.oxforddictionaries.com:443/api/v1/inflections/'
-        self.define_url = 'https://od-api.oxforddictionaries.com:443/api/v1/entries/'
+        self.root_url = 'https://od-api.oxforddictionaries.com:443/api/v2/inflections/'
+        self.define_url = 'https://od-api.oxforddictionaries.com:443/api/v2/entries/'
 
         self.pronunciation_mp3 = None
 
